@@ -45,8 +45,6 @@ def openurl_http(vd, path, filetype=None):
         import ssl
 
         ctx = ssl.create_default_context()
-        ctx.check_hostname = False
-        ctx.verify_mode = ssl.CERT_NONE
 
     req = urllib.request.Request(path.given, **vd.options.getall('http_req_'))
     response = urllib.request.urlopen(req, context=ctx)
